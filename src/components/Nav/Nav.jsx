@@ -44,8 +44,8 @@ const Nav = () => {
 
             {/* Action Buttons */}
             <div className="navbar-end space-x-3">
-                <a className="btn btn-primary">Sign Up</a>
-                <a className="btn btn-outline">Login</a>
+                <a className="btn bg-project-green border-project-green text-green-50">Sign in</a>
+                <a className="btn bg-cyan-400 border-cyan-400 text-cyan-50">Sign Up</a>
             </div>
         </nav>
     );
