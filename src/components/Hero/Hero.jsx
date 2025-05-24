@@ -6,11 +6,11 @@ const Hero = () => {
             <div className="hero-content max-w-full flex-col lg:flex-row-reverse">
                 <img
                 src={heroImg}
-                className="xxs:max-w-3xs lg:max-w-sm"
+                className="xxs:max-w-3xs md:max-w-2xs lg:max-w-sm"
                 />
                 <div>
-                <h1 className="xxs:text-3xl lg:text-5xl font-bold text-title xxs:leading-tight lg:leading-normal">Books to freshen up your bookshelf</h1>
-                <button className="btn bg-project-green text-green-50 xxs:mt-5 lg:mt-12 capitalize font-serif font-bold">view the list</button>
+                <h1 className="xxs:text-3xl lg:text-5xl font-bold text-title xxs:leading-tight lg:leading-normal xxs:text-center lg:text-left">Books to freshen up your bookshelf</h1>
+                <button className="btn xxs:w-full lg:w-auto bg-project-green text-green-50 xxs:mt-5 lg:mt-12 capitalize font-serif font-bold">view the list</button>
                 </div>
             </div>
         </div>
