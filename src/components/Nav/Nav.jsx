@@ -6,7 +6,7 @@ const Nav = () => {
     const links = (
         <>
             <li><NavLink to="/" className={navLinks}>Home</NavLink></li>
-            <li><NavLink to="/books" className={navLinks}>Listed Books</NavLink></li>
+            <li><NavLink to="/listed-books" className={navLinks}>Listed Books</NavLink></li>
             <li><NavLink to="/pages" className={navLinks}>Pages to Read</NavLink></li>
         </>
     );
@@ -41,7 +41,7 @@ const Nav = () => {
                     </div>
 
                     {/* Logo */}
-                    <NavLink to="/" className="text-lg font-bold xxs:text-sm sm:text-base lg:text-xl">
+                    <NavLink to="/"  className="text-lg font-bold xxs:text-sm sm:text-base lg:text-xl">
                         Book Store
                     </NavLink>
                 </div>
