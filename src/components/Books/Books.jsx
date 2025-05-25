@@ -15,18 +15,20 @@ const Books = () => {
     console.log(books);
     return (
 
-        <BookContext.Provider value={books}>
-            <div className='w-full h-auto flex flex-col flex-wrap justify-center items-center'>
+        <BookContext.Provider  value={books}>
+           <div className='w-full h-auto flex flex-col items-center'>
 
-                <h2 className='font-serif font-bold text-4xl text-center capitalize my-7 pt-3'>books</h2>
-                <div className='w-full h-auto pb-5 grid grid-cols-3 gap-7'>
-                    {
-                        books.map(book=>(
-                            <Card key={book.bookId} book={book}  />
-                        ))
-                    }
-                </div>
+            <h2 className='font-serif font-bold xxs:text-3xl lg:text-4xl text-center capitalize my-7 pt-3'>books</h2>
+
+            <div className='w-full grid xxs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto justify-items-center items-center gap-7 mb-5'>
+                {
+                books.map(book => (
+                    <Card key={book.bookId} book={book} />
+                ))
+                }
             </div>
+        </div>
+
         </BookContext.Provider>
 
     );
