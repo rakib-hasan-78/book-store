@@ -23,8 +23,8 @@
   /* color */
   --color-project-green:oklch(0.705 0.175 140.1);
   --color-title:oklch(15.83% 0 0);
-  --color-hero:oklch(15.83% 0 0/5%);
-;
+  --color-hero:oklch(15.83% 0 0 /5%);
+
 
 }
 

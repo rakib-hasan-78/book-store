@@ -11,8 +11,9 @@ const Header = () => {
     const headerPosition = header.offsetTop;
 
     const scrollHandler = () => {
-      const scroll = window.scrollY; // ✅ moved here!
-      setIsScroll(scroll > headerPosition);
+      const scroll = window.scrollY; 
+      scroll>headerPosition ? setIsScroll(true) : setIsScroll(false)
+    //   setIsScroll(scroll > headerPosition);
     };
 
     window.addEventListener('scroll', scrollHandler);
