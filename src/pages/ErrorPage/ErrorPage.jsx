@@ -16,13 +16,24 @@ const ErrorPage = () => {
         if (isRouteErrorResponse(error)) {
             return (
             <div 
-            className='w-full flex flex-col items-center justify-center'
+            className='w-full h-auto flex flex-col items-center justify-center'
             >
                 <h2 
                 className='xxs:text-4xl lg:text-6xl text-sky-400 xxs:font-black lg:font-extrabold capitalize'>oops error occurred : <span className='text-sky-500'>{error.status}!</span></h2>
                 <h3 className='font-serif font-black xxs:text-2xl lg:text-5xl text-red-400 uppercase'>  
                 <span className='text-orange-700 lowercase italic'>  '{searchRoute}' </span> {error.statusText}</h3>
                 {error.data?.message && <p>{error.data.message}</p>}
+                <button onClick={()=>navigate(-1)} className="btn btn-dash btn-error capitalize hover:text-red-50">return</button>
+            </div>
+            )
+        } else{
+            return(
+                <div 
+                className='w-full h-auto flex flex-col items-center justify-center'
+            >
+                <h2 
+                className='xxs:text-4xl lg:text-6xl text-sky-400 xxs:font-black lg:font-extrabold capitalize'>oops error occurred : <span className='text-sky-500'>{error.status}!</span></h2>
+
                 <button onClick={()=>navigate(-1)} className="btn btn-dash btn-error capitalize hover:text-red-50">return</button>
             </div>
             )

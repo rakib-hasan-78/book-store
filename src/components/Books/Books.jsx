@@ -2,20 +2,35 @@ import React, { useState } from 'react';
 import { createContext } from 'react';
 import { useEffect } from 'react';
 import Card from '../Card/Card';
+import Search from '../Search/Search';
+import Notification from '../Notification/Notification';
 
 export const BookContext =  createContext();
 
 const Books = () => {
+
     const [books, setBooks] = useState([]);
+    const [allBooks, setAllBooks] = useState([])
+    const [isSearched, setIsSearched] = useState(false);
+
     useEffect(() =>{
         fetch('/data/booksData.json')
             .then(res=>res.json())
-            .then(data=>setBooks(data))
+            .then(data=>{
+                setBooks(data)
+                setAllBooks(data);
+            })
     },[])
     console.log(books);
     return (
 
-        <BookContext.Provider  value={books}>
+        <BookContext.Provider  value={{books, setBooks, setIsSearched, allBooks}}>
+           <Search />
+           {
+            isSearched&&(
+                <Notification />
+            )
+           }
            <div className='w-full h-auto flex flex-col items-center'>
 
             <h2 className='font-serif font-bold xxs:text-3xl lg:text-4xl text-center capitalize my-7 pt-3'>books</h2>
