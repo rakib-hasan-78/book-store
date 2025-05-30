@@ -34,7 +34,7 @@ const Search = () => {
         )
         setBooks(result);
         setIsSearched(true);
-    }, [name, authorName,  allBooks, setIsSearched, tagLine])
+    }, [name, authorName,  allBooks, setIsSearched, tagLine, setBooks])
 
     return (
         <div className='w-full h-auto py-10 grid grid-cols-3 justify-items-center items-center gap-5'>

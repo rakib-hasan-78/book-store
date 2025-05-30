@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = ({book}) => {
-    const {author, bookName, category, image, rating, tags } = book;
+    const {author, bookName, category, image, rating, tags , bookId} = book;
     return (
-        <div className="card bg-base-100 w-80 shadow-sm border border-gray-200/60 cursor-pointer">
+        <Link
+        to={`/books/${bookId}`}
+        className="card bg-base-100 w-80 shadow-sm border border-gray-200/60 cursor-pointer">
             <figure className='bg-hero h-56 m-5 mb-0 rounded-lg'>
                 <img
                 className='w-28 h-40'
@@ -41,7 +44,7 @@ const Card = ({book}) => {
                     </div>
                 </div>
             </div>
-       </div>
+       </Link>
     );
 };
 Card.propTypes ={
@@ -51,7 +54,8 @@ Card.propTypes ={
         category: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,
         rating: PropTypes.number.isRequired,
-        tags: PropTypes.arrayOf(PropTypes.string)
+        tags: PropTypes.arrayOf(PropTypes.string),
+        bookId:PropTypes.number.isRequired,
     }).isRequired,
     
 }

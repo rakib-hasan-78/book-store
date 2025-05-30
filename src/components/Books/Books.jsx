@@ -68,7 +68,8 @@ const Books = () => {
 
                     {
                         Array.from({length:totalPages}, (_, idx)=>{
-                            return <button 
+                            return <button
+                                    key={idx+1} 
                                     className="btn btn-xs"
                                     onClick={()=>paginationHandler(idx+1)}
                                     >
