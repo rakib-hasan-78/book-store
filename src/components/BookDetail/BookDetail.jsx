@@ -1,14 +1,26 @@
 import React from 'react';
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import Divider from '../Divider/Divider';
+import { useBook } from '../../../utilities/BookContext/BookContext';
 
 
 const BookDetail = () => {
     const {bookId} = useParams();
     const books = useLoaderData();
     const returnNavigate = useNavigate();
+    const {readingHandler, wishListHandler}  = useBook();
     const book = books.find(book=>book.bookId===parseInt(bookId));
     const {image, bookName, author,category, review, tags, totalPages, publisher, yearOfPublishing, rating } =book;
+    // addToRead handler 
+    const addToReadHandler =(e)=>{
+        e.preventDefault();
+        readingHandler(book);
+    }
+    // addToWishList Handler 
+    const addToWishListHandler = e=>{
+        e.preventDefault();
+        wishListHandler(book)
+    }
     // return handler===>
         const returnHandler =e=>{
             e.preventDefault();
@@ -67,10 +79,14 @@ const BookDetail = () => {
                     </h5>
                 </div>
                 <div className="flex space-x-2 mt-14">
-                    <button className="btn xxs:btn-xs lg:btn-md bg-project-green border-project-green text-green-50">
+                    <button
+                    onClick={addToReadHandler}
+                     className="btn xxs:btn-xs lg:btn-md bg-project-green border-project-green text-green-50">
                         Read
                     </button>
-                    <button className="btn xxs:btn-xs lg:btn-md bg-cyan-400 border-cyan-400 text-cyan-100">
+                    <button
+                    onClick={addToWishListHandler} 
+                    className="btn xxs:btn-xs lg:btn-md bg-cyan-400 border-cyan-400 text-cyan-100">
                         Wishlist
                     </button>
                     <button
