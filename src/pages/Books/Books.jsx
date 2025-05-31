@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useBook } from '../../../utilities/BookContext/BookContext';
+import PageHero from '../../components/PageHero/PageHero';
+import Tab from '../../components/Tab/Tab';
 
 const Books = () => {
+    const [buttonType, setButtonType] = useState('readingList');
+    const {readBooks, wishList} = useBook();
+
     return (
-        <div>
-            <h1>my name is books...</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex asperiores ab quibusdam quasi, accusamus iure dolor reprehenderit laudantium earum sunt rerum possimus numquam quia, dolorem beatae ad sapiente tempore omnis cumque maxime debitis tempora hic!</p>
+        <div className='w-full h-auto'>
+           <PageHero className={`flex items-center justify-center`}>
+            <h2 className='text-3xl font-bold'>Books</h2>
+           </PageHero>
+           <Tab />
         </div>
     );
 };
