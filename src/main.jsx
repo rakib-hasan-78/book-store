@@ -6,6 +6,7 @@ import Root from './pages/Root/Root'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import Books from './pages/Books/Books';
 import Home from './pages/Home/Home'
+import BookDetail from './components/BookDetail/BookDetail';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       {
         path:'/books/:bookId',
         loader: () => fetch('/data/booksData.json'),
-        element: <div>i am new</div>
+        element: <BookDetail />
       }
     ]
     
