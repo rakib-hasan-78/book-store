@@ -92,7 +92,7 @@ const BookDetail = () => {
                     <button
                     onClick={returnHandler}
                      className="btn xxs:btn-xs lg:btn-md bg-red-400 border-red-400 text-red-100">
-                        Return
+                        ReturnX
                     </button>
                 </div>
             </div>    
