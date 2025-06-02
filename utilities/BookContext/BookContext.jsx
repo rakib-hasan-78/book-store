@@ -9,9 +9,10 @@ export const useBook =()=> useContext(bookContext);
 const BookContext = ({children}) => {
     const  [readBooks, setReadBooks] = useState([]);
     const [wishList, setWishList] = useState([]);
+    console.log(readBooks);
 
     const readingHandler = book=>{
-         if (readBooks.find(book=>book.bookId===book.bookId)) {
+         if (readBooks.find(listedBook=>listedBook.bookId===book.bookId)) {
                 toast.error(`Error! You can't add a book twice here`, {
                     position:'top-center'
                 });
@@ -25,7 +26,7 @@ const BookContext = ({children}) => {
          }      
     }
     const wishListHandler = book =>{
-        if(wishList.find(book=>book.bookId===book.bookId)){
+        if(wishList.find(selectedBook=>selectedBook.bookId===book.bookId)){
             toast.error(`Error! Already in your wishlist`,{
                 position:'top-center',
             });

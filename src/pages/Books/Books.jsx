@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import { useBook } from '../../../utilities/BookContext/BookContext';
+import React  from 'react';
 import PageHero from '../../components/PageHero/PageHero';
 import Tab from '../../components/Tab/Tab';
 
 const Books = () => {
-    const [buttonType, setButtonType] = useState('readingList');
-    const {readBooks, wishList} = useBook();
 
     return (
         <div className='w-full h-auto'>
