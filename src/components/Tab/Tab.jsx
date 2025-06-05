@@ -10,7 +10,7 @@ const Tab = () => {
         <div>
             {/* name of each tab group should be unique */}
             <div className="tabs tabs-lift">
-            <label className="tab">
+            <label className="tab font-semibold">
                 <input type="radio" name="my_tabs_4" defaultChecked  />
                 Read Books
             </label>
@@ -23,7 +23,7 @@ const Tab = () => {
                 </div>
             </div>
 
-            <label className="tab">
+            <label className="tab font-semibold">
                 <input type="radio" name="my_tabs_4" />
                 Wishlist Books
             </label>

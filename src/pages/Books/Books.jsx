@@ -6,7 +6,7 @@ const Books = () => {
 
     return (
         <div className='w-full h-auto'>
-           <PageHero className={`flex items-center justify-center`}>
+           <PageHero className={`flex items-center justify-center mb-3`}>
             <h2 className='text-3xl font-bold'>Books</h2>
            </PageHero>
            <Tab />
