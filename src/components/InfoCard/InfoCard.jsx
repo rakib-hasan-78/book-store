@@ -5,11 +5,18 @@ import { FiUsers } from "react-icons/fi";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { CiBookmark } from "react-icons/ci";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { useNavigate } from 'react-router-dom';
 
 const InfoCard = ({book}) => {
-    const {author, bookName, category, image, rating, tags, yearOfPublishing, totalPages, publisher} = book;
+    const {author, bookName, category, image, rating, tags, yearOfPublishing, totalPages, publisher, bookId} = book;
+    const detailNavigate = useNavigate();
+    const detailHandler=(e)=>{
+        e.preventDefault();
+        detailNavigate(`/books/${bookId}`)
+    }
     return (
-        <div 
+        <div
+        
         className='w-10/12 h-72 border border-gray-200/90 rounded-2xl flex items-center px-5 space-x-6'>
             <div className='w-56 h-56 bg-hero rounded-2xl flex items-center justify-center'>
                 <img className='w-32 h-44' src={image} alt="#" />
@@ -66,7 +73,8 @@ const InfoCard = ({book}) => {
                             Rating: {rating}
                             </button>
 
-                            <button 
+                            <button
+                            onClick={detailHandler} 
                             className="btn btn-success font-normal rounded-4xl px-6 text-base-100 hover:text-blue-100 -py-5">
                             View Details
                             </button>
