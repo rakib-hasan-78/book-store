@@ -41,7 +41,7 @@ const BookContext = ({children}) => {
         }
     }
 
-    const value = {readBooks, wishList, readingHandler, wishListHandler};
+    const value = {readBooks,setReadBooks, wishList, readingHandler, wishListHandler};
 
     return <bookContext.Provider value={value}>{children}</bookContext.Provider>
 

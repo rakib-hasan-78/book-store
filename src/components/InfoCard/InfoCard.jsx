@@ -6,13 +6,23 @@ import { RiFilePaper2Line } from "react-icons/ri";
 import { CiBookmark } from "react-icons/ci";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
+import { useBook } from '../../../utilities/BookContext/BookContext';
 
 const InfoCard = ({book}) => {
     const {author, bookName, category, image, rating, tags, yearOfPublishing, totalPages, publisher, bookId} = book;
+    const infoBook =useBook();
+    const {setReadBooks} = infoBook;
     const detailNavigate = useNavigate();
     const detailHandler=(e)=>{
         e.preventDefault();
         detailNavigate(`/books/${bookId}`)
+    }
+    const removeHandler = e=>{
+        e.preventDefault();
+        setReadBooks(prev=>{
+          return  prev.filter(p=>p.bookId!==bookId)
+        })
+
     }
     return (
         <div
@@ -81,7 +91,9 @@ const InfoCard = ({book}) => {
 
                             <button className="btn btn-soft btn-secondary font-medium"><CiBookmark /></button>
 
-                            <button className="btn btn-circle btn-error text-red-100 hover:text-base-200">
+                            <button
+                            onClick={removeHandler}
+                             className="btn btn-circle btn-error text-red-100 hover:text-base-200">
                             <RiDeleteBin6Line />
                             </button>
 
