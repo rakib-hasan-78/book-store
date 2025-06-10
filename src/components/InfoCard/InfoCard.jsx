@@ -4,6 +4,7 @@ import { HiOutlineUsers } from "react-icons/hi";
 import { FiUsers } from "react-icons/fi";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { CiBookmark } from "react-icons/ci";
+import { SiWish } from "react-icons/si";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import { useBook } from '../../../utilities/BookContext/BookContext';
@@ -11,7 +12,7 @@ import { useBook } from '../../../utilities/BookContext/BookContext';
 const InfoCard = ({book}) => {
     const {author, bookName, category, image, rating, tags, yearOfPublishing, totalPages, publisher, bookId} = book;
     const infoBook =useBook();
-    const {removeBookHandler, transferListItemHandler} = infoBook;
+    const {removeBookHandler, transferListItemHandler, isInReadBookList} = infoBook;
     const detailNavigate = useNavigate();
 
 
@@ -94,7 +95,7 @@ const InfoCard = ({book}) => {
 
                             <button
                             onClick={addHandler}
-                             className="btn btn-soft btn-secondary font-medium"><CiBookmark /></button>
+                             className="btn btn-soft btn-secondary font-medium">{isInReadBookList(book)? <CiBookmark /> :<SiWish />}</button>
 
                             <button
                             onClick={removeHandler}

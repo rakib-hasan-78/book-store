@@ -65,6 +65,8 @@ const BookContext = ({children}) => {
         }
     }
 
+    const isInReadBookList = book=>readBooks.some(readBook=>readBook.bookId===book.bookId);
+
     const transferListItemHandler = book=>{
         const isInReadBookList = readBooks.some(readBook=>readBook.bookId===book.bookId);
         const isInWishList = wishList.some(wL=>wL.bookId===book.bookId);
@@ -96,7 +98,7 @@ const BookContext = ({children}) => {
         }
     }
 
-    const value = {readBooks,setReadBooks, wishList, readingHandler, wishListHandler, removeBookHandler, transferListItemHandler};
+    const value = {readBooks,setReadBooks, wishList, readingHandler, wishListHandler, removeBookHandler, transferListItemHandler, isInReadBookList};
 
     return <bookContext.Provider value={value}>{children}</bookContext.Provider>
 
