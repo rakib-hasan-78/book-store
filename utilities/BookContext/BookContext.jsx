@@ -41,7 +41,31 @@ const BookContext = ({children}) => {
         }
     }
 
-    const value = {readBooks,setReadBooks, wishList, readingHandler, wishListHandler};
+    const removeBookHandler = book=>{
+        const isReadList = readBooks.some(readBook=>readBook.bookId===book.bookId);
+        const isWishList = wishList.some(wl=>wl.bookId===book.bookId);
+
+        if (isReadList) {
+            toast.error(`${book.bookName} Is Removed From Read Book List`, {
+                position:'top-center',
+            });
+            setReadBooks(prev=>(
+                prev.filter(pre=>pre.bookId!==book.bookId)
+            ));
+            return;
+        }
+
+        if (isWishList) {
+            toast.error(`${book.bookName} Is Removed From Wish List`, {
+                position:'top-center',
+            });
+            setWishList(prev=>(
+                prev.filter(pre=> pre.bookId!==book.bookId)
+            ))
+        }
+    }
+
+    const value = {readBooks,setReadBooks, wishList, readingHandler, wishListHandler, removeBookHandler};
 
     return <bookContext.Provider value={value}>{children}</bookContext.Provider>
 

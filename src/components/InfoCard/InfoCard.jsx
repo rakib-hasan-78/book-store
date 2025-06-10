@@ -11,7 +11,7 @@ import { useBook } from '../../../utilities/BookContext/BookContext';
 const InfoCard = ({book}) => {
     const {author, bookName, category, image, rating, tags, yearOfPublishing, totalPages, publisher, bookId} = book;
     const infoBook =useBook();
-    const {setReadBooks} = infoBook;
+    const {removeBookHandler} = infoBook;
     const detailNavigate = useNavigate();
     const detailHandler=(e)=>{
         e.preventDefault();
@@ -19,10 +19,7 @@ const InfoCard = ({book}) => {
     }
     const removeHandler = e=>{
         e.preventDefault();
-        setReadBooks(prev=>{
-          return  prev.filter(p=>p.bookId!==bookId)
-        })
-
+        removeBookHandler(book);
     }
     return (
         <div
