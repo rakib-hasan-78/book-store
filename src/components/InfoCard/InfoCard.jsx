@@ -11,8 +11,10 @@ import { useBook } from '../../../utilities/BookContext/BookContext';
 const InfoCard = ({book}) => {
     const {author, bookName, category, image, rating, tags, yearOfPublishing, totalPages, publisher, bookId} = book;
     const infoBook =useBook();
-    const {removeBookHandler} = infoBook;
+    const {removeBookHandler, transferListItemHandler} = infoBook;
     const detailNavigate = useNavigate();
+
+
     const detailHandler=(e)=>{
         e.preventDefault();
         detailNavigate(`/books/${bookId}`)
@@ -20,6 +22,10 @@ const InfoCard = ({book}) => {
     const removeHandler = e=>{
         e.preventDefault();
         removeBookHandler(book);
+    }
+    const addHandler = e=>{
+        e.preventDefault();
+        transferListItemHandler(book);
     }
     return (
         <div
@@ -86,7 +92,9 @@ const InfoCard = ({book}) => {
                             View Details
                             </button>
 
-                            <button className="btn btn-soft btn-secondary font-medium"><CiBookmark /></button>
+                            <button
+                            onClick={addHandler}
+                             className="btn btn-soft btn-secondary font-medium"><CiBookmark /></button>
 
                             <button
                             onClick={removeHandler}

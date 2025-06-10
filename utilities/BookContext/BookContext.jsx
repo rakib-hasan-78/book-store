@@ -65,7 +65,38 @@ const BookContext = ({children}) => {
         }
     }
 
-    const value = {readBooks,setReadBooks, wishList, readingHandler, wishListHandler, removeBookHandler};
+    const transferListItemHandler = book=>{
+        const isInReadBookList = readBooks.some(readBook=>readBook.bookId===book.bookId);
+        const isInWishList = wishList.some(wL=>wL.bookId===book.bookId);
+
+        if (isInReadBookList) {
+            if (!(wishList.some(wL=>wL.bookId===book.bookId))) {
+                toast.success(`${book.bookName} Removed From Read Book List & Added To Wish List.`, {
+                    position:'top-center',
+                });
+                setReadBooks(prev=>(
+                    prev.filter(pre=>pre.bookId!==book.bookId)
+                ));
+                setWishList([...wishList, book]);             
+            }
+            return;
+        }
+
+        if (isInWishList) {
+            if (!(readBooks.some(readBook=>readBook.bookId===book.bookId))) {
+                toast.success(`${book.bookName} Removed From WishList & Added to Read Book List.`, {
+                    position:'top-center',
+                });
+                setWishList(wishItem=>(
+                    wishItem.filter(item=>item.bookId!==book.bookId)
+                ));
+                setReadBooks([...readBooks, book]);
+            }
+            return;
+        }
+    }
+
+    const value = {readBooks,setReadBooks, wishList, readingHandler, wishListHandler, removeBookHandler, transferListItemHandler};
 
     return <bookContext.Provider value={value}>{children}</bookContext.Provider>
 
