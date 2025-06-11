@@ -94,8 +94,9 @@ const InfoCard = ({book}) => {
                             </button>
 
                             <button
+                            title={isInReadBookList(book)?`Add to WishList`:`Add to Read BookList`}
                             onClick={addHandler}
-                             className="btn btn-soft btn-secondary font-medium">{isInReadBookList(book)? <CiBookmark /> :<SiWish />}</button>
+                             className="btn btn-soft btn-secondary font-medium">{isInReadBookList(book)? <SiWish /> : <CiBookmark />}</button>
 
                             <button
                             onClick={removeHandler}
@@ -111,3 +112,4 @@ const InfoCard = ({book}) => {
 };
 
 export default InfoCard;
+

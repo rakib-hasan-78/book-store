@@ -2,7 +2,7 @@ import React from 'react';
 import emptyState from '../../assets/empty-list-state.gif';
 import { useNavigate } from 'react-router-dom';
 
-const EmptyState = () => {
+const EmptyState = ({children}) => {
     const returnNavigate = useNavigate();
 
     return (
@@ -11,7 +11,7 @@ const EmptyState = () => {
             style={{ backgroundImage: `url(${emptyState})` }}
         >
             <h3 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-title capitalize mb-5">
-                no book added yet!
+                {children}
             </h3>
             <button 
                 onClick={() => returnNavigate(-1)} 
