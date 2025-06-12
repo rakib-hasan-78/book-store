@@ -7,7 +7,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage'
 import Books from './pages/Books/Books';
 import Home from './pages/Home/Home'
 import BookDetail from './components/BookDetail/BookDetail';
-import PageData from './components/PageData/PageData'
+import PageData from './pages/PageData/PageData'
 
 const router = createBrowserRouter([
   {

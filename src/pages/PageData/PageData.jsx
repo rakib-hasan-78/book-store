@@ -1,6 +1,6 @@
 import React from 'react';
-import PageHero from './../PageHero/PageHero';
-import PageChart from './../PageChart/PageChart';
+import PageHero from '../../components/PageHero/PageHero';
+import PageChart from '../../components/PageChart/PageChart';
 
 const PageData = () => {
     return (
