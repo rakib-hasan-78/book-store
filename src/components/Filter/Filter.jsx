@@ -81,4 +81,3 @@ const Filter = ({type}) => {
 
 export default Filter;
 
-// yearOfPublishing
