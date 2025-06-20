@@ -4,6 +4,7 @@ import Divider from '../Divider/Divider';
 import { useBook } from '../../../utilities/BookContext/BookContext';
 
 
+
 const BookDetail = () => {
     const {bookId} = useParams();
     const books = useLoaderData();
@@ -15,11 +16,13 @@ const BookDetail = () => {
     const addToReadHandler =(e)=>{
         e.preventDefault();
         readingHandler(book);
+        
     }
     // addToWishList Handler 
     const addToWishListHandler = e=>{
         e.preventDefault();
-        wishListHandler(book)
+        wishListHandler(book);
+        
     }
     // return handler===>
         const returnHandler =e=>{
