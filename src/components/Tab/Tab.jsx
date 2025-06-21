@@ -59,7 +59,7 @@ const Tab = ({bookData}) => {
                     <input type="radio" name="my_tabs_4" />
                     Wishlist Books
                 </label>
-                <div className="tab-content bg-base-100 border-t-base-300 p-6">
+                <div className="tab-content bg-base-100 border-t-base-300 lg:p-6">
                     <div className='w-full flex justify-center'>
                         {wishList.length > 0 && <Filter type='wishlist' />}
                     </div>
