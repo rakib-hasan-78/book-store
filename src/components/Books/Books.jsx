@@ -23,7 +23,7 @@ const Books = () => {
                 setAllBooks(data);
             })
     },[])
-    console.log(books);
+    
 
     const totalPages = Math.ceil(books.length / contents);
     const currentIndex = (currentPage - 1) * contents;

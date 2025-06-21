@@ -10,7 +10,8 @@ export const useBook =()=> useContext(bookContext);
 const BookContext = ({children}) => {
     const  [readBooks, setReadBooks] = useState([]);
     const [wishList, setWishList] = useState([]);
-    console.log(readBooks);
+    
+    
 
     const readingHandler = book=>{
         if (wishList.find(wL=>wL.bookId===book.bookId)) {
