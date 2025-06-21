@@ -44,7 +44,7 @@ const Tab = ({bookData}) => {
                     <div className='w-full flex justify-center'>
                         {readBooks.length > 0 && <Filter type='read' />}
                     </div>
-                    <div className='w-full h-auto flex flex-col space-y-3 my-5 border-none'>
+                    <div className='w-full h-auto flex flex-col space-y-3 my-7 border-none'>
                         {
                             readBooks.length === 0
                                 ? <EmptyState>Empty Read Book List</EmptyState>
@@ -63,7 +63,7 @@ const Tab = ({bookData}) => {
                     <div className='w-full flex justify-center'>
                         {wishList.length > 0 && <Filter type='wishlist' />}
                     </div>
-                    <div className='w-full h-auto flex flex-col space-y-3 my-5 border-none'>
+                    <div className='w-full h-auto flex flex-col space-y-3 my-1 border-none'>
                         {
                             wishList.length === 0
                                 ? <EmptyState>Empty Wish Book List</EmptyState>

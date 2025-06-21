@@ -31,7 +31,7 @@ const BookContext = ({children}) => {
                    position:'top-center'
                });
                setReadBooks([...readBooks, book]);
-               addToLS('read-book-list', [], book.bookId);
+               addToLS('read-book-list', book.bookId);
                return;
             }      
         }
@@ -55,7 +55,7 @@ const BookContext = ({children}) => {
                     position: 'top-center'
                 });
                 setWishList([...wishList, book]);
-                addToLS('wishlist-book-list', [], book.bookId);
+                addToLS('wishlist-book-list', book.bookId);
                 return;
             }
         }
@@ -72,7 +72,7 @@ const BookContext = ({children}) => {
             setReadBooks(prev=>(
                 prev.filter(pre=>pre.bookId!==book.bookId)
             ));
-            removeToLS('read-book-list', [], book.bookId);
+            removeToLS('read-book-list',  book.bookId);
             return;
         }
 
@@ -83,7 +83,7 @@ const BookContext = ({children}) => {
             setWishList(prev=>(
                 prev.filter(pre=> pre.bookId!==book.bookId)
             ))
-            removeToLS('wishlist-book-list', [], book.bookId)
+            removeToLS('wishlist-book-list',  book.bookId)
         }
     }
 
@@ -101,9 +101,9 @@ const BookContext = ({children}) => {
                 setReadBooks(prev=>(
                     prev.filter(pre=>pre.bookId!==book.bookId)
                 ));
-                removeToLS('read-book-list', [], book.bookId);
+                removeToLS('read-book-list',  book.bookId);
                 setWishList([...wishList, book]);
-                addToLS('wishlist-book-list', [], book.bookId);             
+                addToLS('wishlist-book-list',  book.bookId);             
             }
             return;
         }
@@ -116,9 +116,9 @@ const BookContext = ({children}) => {
                 setWishList(wishItem=>(
                     wishItem.filter(item=>item.bookId!==book.bookId)
                 ));
-                removeToLS('wishlist-book-list', [], book.bookId)
+                removeToLS('wishlist-book-list',  book.bookId)
                 setReadBooks([...readBooks, book]);
-                addToLS('read-book-list', [], book.bookId);
+                addToLS('read-book-list',  book.bookId);
             }
             return;
         }

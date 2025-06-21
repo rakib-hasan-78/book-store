@@ -31,13 +31,13 @@ const BookDetail = () => {
         }
     return (
         <div
-        className='w-full h-[610px] flex items-center my-5 space-x-5'>
+        className='w-full xxs:h-auto lg:h-[610px] flex flex-col md:flex-row items-center justify-center my-5 space-x-5'>
         {/* book image---> */}
-            <div className='w-6/12 h-full bg-hero flex items-center justify-center rounded-lg'>
-                <img className='w-9/12 h-[564px]' src={image} alt="" />
+            <div className='w-full md:w-6/12 h-full bg-hero flex items-center justify-center rounded-lg'>
+                <img className='w-9/12 xxs:h-[380px] md:h-[564px] xxs:m-7 md:m-0' src={image} alt="" />
             </div>
             {/* book info ----> */}
-            <div className='w-6/12 h-full flex flex-col'>
+            <div className='w-full md:w-6/12 h-full flex flex-col'>
                 <div className='flex flex-col space-y-4'>
                     <h2 className='capitalize text-5xl font-bold font-serif'>{bookName}</h2>
                     <h4 className='capitalize font-medium text-xl text-title/80'>by: {author}</h4>

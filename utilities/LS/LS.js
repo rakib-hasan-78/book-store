@@ -1,7 +1,7 @@
 // selecting name and type for ls !--===>
-    const getToLS = (itemName, itemType)=>{
+    const getToLS = (itemName)=>{
         const LS = localStorage.getItem(itemName);
-        return LS ? JSON.parse(LS) : itemType;
+        return LS ? JSON.parse(LS) : [];
     }
 
 // save items to LS ==>
@@ -12,9 +12,9 @@
 
 // add item to  LS ==>
 
-    const addToLS = (itemName, itemType, id)=>{
+    const addToLS = (itemName, id)=>{
 
-        const LS = getToLS(itemName, itemType);
+        const LS = getToLS(itemName);
 
         // checking if the items in the data set
         
@@ -27,8 +27,8 @@
 
 // removing item from data set ==>
 
-    const removeToLS =(itemName, itemType, id)=>{
-        const LS = getToLS(itemName, itemType);
+    const removeToLS =(itemName, id)=>{
+        const LS = getToLS(itemName);
         const removedItem = LS.filter(idx=>idx!==id);
         setItemsLS(itemName, removedItem);
     }
